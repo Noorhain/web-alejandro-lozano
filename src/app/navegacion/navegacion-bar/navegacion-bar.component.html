@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light navegacion__fondo">
+  <div class="container">
+    <a [routerLink]="['/home']" class="navbar-brand navegacion__logo">
+      <img [src]="imagenLogo" alt="Logo Alejandro Lozano" class="img-fluid navegacion__logo--imagen"> <h1
+      class="navegacion__logo--texto px-2">Alejandro Lozano</h1></a>
+    <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navegacion__menu" data-toggle="collapse" type="button">
+      <fa-icon [icon]="iconoHamburguer" class="navegacion__hamburguer--icono" size="lg"></fa-icon>
+    </button>
+    <div class="collapse navbar-collapse" id="navegacion__menu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a [routerLinkActive]="'navegacion__seccion--activa'" [routerLink]="['/home']" class="nav-link navegacion__seccion--texto">Inicio</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link navegacion__seccion--texto" [routerLinkActive]="'navegacion__seccion--activa'" [routerLink]="['/blog']">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLinkActive]="'navegacion__seccion--activa'" [routerLink]="['/publicaciones']" class="nav-link navegacion__seccion--texto">Publicaciones</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLinkActive]="'navegacion__seccion--activa'" [routerLink]="['/about']" class="nav-link navegacion__seccion--texto">Sobre
+            mí</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navegacion__seccion--texto" [routerLinkActive]="'navegacion__seccion--activa'" [routerLink]="['/contacto']">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

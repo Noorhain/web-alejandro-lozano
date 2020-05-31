@@ -1,0 +1,89 @@
+.publicacion {
+  &__enlace {
+    &__enlace:hover,
+    &__enlace:active,
+    &__enlace:visited {
+      @include estilo-enlace($color-acento);
+    }
+  }
+
+  &__imagen {
+    &--unica {
+      max-height: 350px;
+    }
+  }
+
+  &__lista {
+    &--larga {
+      &--item {
+        margin: .3rem 5rem .3rem 0;
+      }
+    }
+  }
+
+  &__notas {
+    &--lista {
+      &-item {
+        text-align: justify;
+        font-family: $encabezado-principal;
+        font-size: .9rem;
+      }
+    }
+
+    &--referencia {
+      color: $color-acento !important;
+    }
+  }
+
+  &__parrafo {
+    @include parrafo-contenido;
+  }
+
+  &__referencia {
+    &--enlace,
+    &--enlace:hover,
+    &--enlace:active,
+    &--enlace:visited {
+      color: $color-acento !important;
+    }
+  }
+}
+
+.indice {
+  color: black !important;
+
+  &__lista {
+    &--item {
+      line-height: 2.5rem;
+      font-size: 1.1rem;
+      @include transicion-vertical($color-acento, $desplazamiento-arriba-menor, $duracion-transicion-normal);
+    }
+  }
+}
+
+.bibliografia {
+  &__lista {
+    & li {
+      text-align: justify;
+
+      & > a {
+        color: $color-acento !important;
+      }
+    }
+  }
+}
+
+.small {
+  &__inicio {
+    display: block;
+    @include transicion-vertical($color-acento, $desplazamiento-arriba-menor, $duracion-transicion-normal);
+  }
+}
+
+/* Fix para algunas publicaciones creadas hace tiempo. En ellas, los enlaces dentro del texto normal no recibían el color azul por unas clases mal nombradas */
+
+.parrafo__texto > a {
+  color: $color-acento !important;
+  @include estilo-enlace($color-acento);
+}
+

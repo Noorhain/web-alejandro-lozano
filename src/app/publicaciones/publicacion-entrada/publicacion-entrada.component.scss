@@ -1,0 +1,13 @@
+@import 'abstracts/variables';
+
+.publicacion {
+  &__subtitulo {
+    font-size: 1.5rem;
+  }
+
+  &__sinbody {
+    color: $color-acento !important;
+    text-decoration-line: none !important;
+    cursor: pointer;
+  }
+}

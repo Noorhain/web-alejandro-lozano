@@ -1,0 +1,23 @@
+<section class="container contenedor" id="home">
+  <aside class="row d-flex align-items-center justify-content-center pt-md-5">
+    <div class="col-12 col-md-6 text-center">
+      <img [src]="imagenBanner" alt="Imagen de banner" class="d-none d-md-block img-fluid home__imagen--banner">
+      <p class="parrafo__texto text-center py-5 py-md-0">Bienvenido a mi web. En ella encontrarás
+        noticias y
+        reflexiones sobre filosofía y tecnología en formato blog y, también, los artículos que he ido publicando sobre
+        estos temas en revistas de investigación</p>
+    </div>
+    <div class="col-md-6" id="home__entradas">
+      <h2 class="parrafo__encabezado--alt text-center my-2 mb-md-5">Últimas entradas</h2>
+      <div class="ml-md-4">
+        <home-entradas></home-entradas>
+      </div>
+    </div>
+  </aside>
+  <article class="row">
+    <section class="col-md-6  offset-md-6 text-center my-3 p-3" id="home__publicacion">
+      <h2 class="parrafo__encabezado--alt text-center">Publicación sugerida</h2>
+      <home-publicacion></home-publicacion>
+    </section>
+  </article>
+</section>

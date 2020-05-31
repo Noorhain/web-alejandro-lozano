@@ -1,0 +1,11 @@
+<ul class="home__entradas--lista parrafo__texto d-block">
+  <ng-container *ngFor="let entrada of ultimasEntradas">
+    <fa-icon [icon]="iconoChevron" class="home__entradas--icono d-none d-md-inline"></fa-icon>
+    <li class="home__entradas--item text-center text-md-left"><a [routerLink]="['/blog/entrada', entrada.contenido]"
+                                                                 class="home__redes--enlace">{{entrada.titulo}}</a>
+    </li>
+  </ng-container>
+</ul>
+
+
+

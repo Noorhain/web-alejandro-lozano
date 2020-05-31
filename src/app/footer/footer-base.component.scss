@@ -1,0 +1,11 @@
+@import 'abstracts/variables';
+@import 'utils/mixins';
+
+.footer {
+  background-color: $color-secundario;
+  color: $color-primario;
+
+  &__enlace {
+    @include transicion-vertical($color-acento !important, none, $duracion-transicion-normal);
+  }
+}

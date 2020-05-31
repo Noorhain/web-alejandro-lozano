@@ -1,0 +1,6 @@
+@import 'abstracts/variables';
+@import 'utils/mixins';
+
+.error404__enlace {
+  @include transicion-vertical($color-acento, $desplazamiento-arriba-menor, $duracion-transicion-rapida !important);
+}

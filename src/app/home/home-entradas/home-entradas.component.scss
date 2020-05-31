@@ -1,0 +1,35 @@
+@import 'abstracts/variables';
+@import 'utils/mixins';
+
+.home__entradas {
+  &--icono {
+    @include bullet-lista;
+  }
+
+  &--item {
+    margin: 10px 0;
+  }
+
+  &--lista {
+    @include reset-lista;
+  }
+}
+
+.home__redes--enlace {
+  display: block;
+  transition: all $duracion-transicion-normal ease-in;
+
+  &:active {
+    transform: scale(1.05);
+    color: $color-acento !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home__redes--enlace:hover {
+    transform: $desplazamiento-derecha-normal;
+    color: $color-acento !important;
+  }
+}
+
+

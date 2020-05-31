@@ -1,0 +1,13 @@
+<a [routerLink]="['entrada', entradaMiniatura.contenido]" class="parrafo__texto">
+  <div class="blog__miniatura--container m-auto">
+    <div
+      [ngStyle]="{backgroundImage: 'linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + this.entradaMiniatura.imagenMiniatura + ')'}"
+      class="blog__miniatura--imagen--wrapper d-flex justify-content-center">
+      <h2 class="text-center text-white align-self-end mb-3 parrafo__encabezado p-2">{{entradaMiniatura.titulo}}</h2>
+    </div>
+    <div class="container justify-content-center d-flex flex-column">
+      <p class="text-center parrafo__texto">{{entradaMiniatura.resumen}}</p>
+      <small class="align-self-end">Publicado el {{entradaMiniatura.fechaPublicacion}} </small>
+    </div>
+  </div>
+</a>

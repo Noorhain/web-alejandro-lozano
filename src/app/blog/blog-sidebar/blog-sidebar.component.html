@@ -1,0 +1,12 @@
+<div class="blog__sidebar--wrapper d-flex flex-column justify-content-center">
+  <a [routerLink]="['entrada', miniaturaAleatoria.contenido]" class="sidebar__imagen--enlace"> <img
+    *ngIf="this.miniaturaAleatoria.imagenMiniatura"
+    [src]="this.miniaturaAleatoria.imagenMiniatura"
+    alt="blog imagen sidebar"
+    class="sidebar__imagen img-fluid align-self-center">
+  </a>
+  <div class="my-4 text-center text-white">
+    <h3 class="parrafo__encabezado">Blog</h3>
+    <p>Artículos, reseñas y comentarios en torno a filosofía, estética y sociedad de las nuevas tecnologías</p>
+  </div>
+</div>

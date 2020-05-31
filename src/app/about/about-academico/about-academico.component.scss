@@ -1,0 +1,13 @@
+@import 'abstracts/variables';
+
+.iconocv {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  transition: all $duracion-transicion-normal ease-in-out;
+}
+
+.iconocv:hover {
+  transform: scale(1.1);
+}
+

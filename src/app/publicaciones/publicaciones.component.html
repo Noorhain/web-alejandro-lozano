@@ -1,0 +1,25 @@
+<section (scrollPosition)="scrollHandler($event)" class="container mb-3" scrollable>
+  <!--  El margen '0' en esta fila previene que haya overflow horizontal en pantallas pequeñas-->
+  <div class="row flex-column justify-content-center m-0">
+    <div class="col m-auto text-center p-3">
+      <h2 class="parrafo__encabezado text-center">Publicaciones</h2>
+      <p class="parrafo__texto m-auto w-75 p-2">Esta sección recopila mis artículos publicados en revistas académicas y
+        científicas. Todos los textos que leas aquí han pasado por un proceso de revisión por pares</p>
+      <input [(ngModel)]="filtroMiniaturas" class="publicaciones__miniatura--busqueda parrafo__texto w-25 m-3"
+             name="publicaciones__miniatura--busqueda" placeholder="Filtra el contenido" type="text">
+    </div>
+    <section *ngFor="let miniatura of miniaturasPublicaciones" class="row justify-content-center flex-column"
+             id="publicaciones__miniatura--vista">
+      <ng-container
+        *ngIf="filtraContenido(filtroMiniaturas, miniatura.titulo, miniatura.subtitulo, miniatura.keywords)">
+        <article [@fadeIn] class="col my-3">
+          <publicacion-miniatura [publicacion]="miniatura"></publicacion-miniatura>
+        </article>
+      </ng-container>
+    </section>
+    <mat-card [@fadeInUp]  *ngIf="paginacion.done | async" class="publicaciones__fincontenido col-6 m-auto text-center">
+      <span class="parrafo__encabezado--alt">Has llegado al final de esta sección</span>
+    </mat-card>
+    <loading-spinner *ngIf="paginacion.loading | async" class="m-auto d-block"></loading-spinner>
+  </div>
+</section>

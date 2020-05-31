@@ -1,0 +1,41 @@
+/* Colores */
+
+$color-primario: #FBFBF8;
+$color-secundario: #969696;
+$color-acento: #257DE2;
+
+/* Desplazamientos */
+
+$desplazamiento-arriba-menor: translateY(-3px);
+$desplazamiento-arriba-normal: translateY(-7px);
+$desplazamiento-arriba-intenso: translateY(-10px);
+
+$desplazamiento-derecha-normal: translateX(7px);
+
+/* Duraciones (para transiciones y animaciones) */
+
+$duracion-transicion-rapida: .1s;
+$duracion-transicion-normal: .3s;
+$duracion-transicion-lenta: .5s;
+
+/* Estilos de fuente */
+
+$texto-principal: "Crimson Text", Garamond, serif;
+$encabezado-principal: "Montserrat", Arial, sans-serif;
+$encabezado-alternativo: "Raleway", Arial, sans-serif;
+
+/* Otros */
+/* Overlay oscuro que se superpone a las miniaturas */
+
+$overlay-oscuro: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)
+);
+
+
+
+
+
+
+

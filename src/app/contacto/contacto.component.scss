@@ -1,0 +1,29 @@
+@import 'abstracts/variables';
+@import 'utils/mixins';
+
+.contacto__correos {
+  &--lista {
+    @include reset-lista;
+  }
+
+  &--item {
+    margin: 10px 0;
+  }
+
+  &--icono {
+    @include bullet-lista;
+  }
+
+  &--enlace {
+    display: block;
+    color: inherit !important;
+    transition: all $duracion-transicion-normal ease-in;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contacto__correos--enlace:hover {
+    transform: $desplazamiento-derecha-normal;
+    color: $color-acento !important;
+  }
+}

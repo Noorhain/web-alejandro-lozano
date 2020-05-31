@@ -1,0 +1,17 @@
+@import 'abstracts/variables';
+
+.home__imagen--banner{
+ max-height: 250px;
+}
+
+@media screen and (min-width: 768px) {
+  #home__publicacion
+  {
+    border-top: solid 1px $color-secundario;
+  }
+}
+
+
+
+
+

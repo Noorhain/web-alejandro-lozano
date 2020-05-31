@@ -1,0 +1,29 @@
+@import 'abstracts/variables';
+@import 'base/typography';
+
+.publicaciones {
+  &__miniatura {
+    &--busqueda {
+      text-align: center;
+      min-width: 250px;
+      background: transparent;
+      border: none;
+      border-bottom: solid 2px $color-secundario;
+      font-size: 1.2rem;
+      color: $color-secundario;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__fincontenido {
+    margin-top: 1rem !important;
+    background: $color-secundario;
+    color: $color-primario;
+  }
+}
+
+input.publicaciones__miniatura--busqueda {
+  height: 45px;
+}

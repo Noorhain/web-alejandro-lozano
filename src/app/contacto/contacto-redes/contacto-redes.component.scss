@@ -1,0 +1,19 @@
+@import 'abstracts/variables';
+
+.contacto__redes {
+  &--container {
+    background-color: $color-secundario;
+  }
+
+  &--enlace {
+    display: block;
+    transition: all $duracion-transicion-normal ease-in;
+    &:hover {
+      color: $color-acento !important;
+    }
+
+    &--imagen {
+      max-width: 40px;
+    }
+  }
+}

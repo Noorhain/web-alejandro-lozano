@@ -1,0 +1,34 @@
+@import 'abstracts/variables';
+
+.home__publicacion {
+  &--container {
+    margin: 0 auto;
+    max-width: 450px;
+    max-height: 450px;
+    width: 85%;
+    text-align: right;
+    color: $color-primario;
+    height: 600px;
+
+    & > div .home__publicacion--datos--wrapper > * {
+      transition: all $duracion-transicion-rapida ease-in-out; /* Se puede abstraer */
+    }
+
+    &:hover > div > .home__publicacion--datos--wrapper > * {
+      transform: $desplazamiento-arriba-intenso; /* Se puede abstraer */
+    }
+  }
+
+  &--datos {
+    background-size: cover;
+    background-position: center;
+
+    &--wrapper {
+      padding: .5rem;
+      width: 100%;
+      text-align: center;
+      /* El overlay se puede abstraer */
+      background-image: $overlay-oscuro;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<section class="container py-4" id="publicaciones">
+  <ng-container *ngIf="publicacion.id">
+    <publicacion-referencia [publicacionReferencias]="publicacion"></publicacion-referencia>
+  </ng-container>
+  <section *ngIf="publicacion.id" class="text-center pt-4 mb-4">
+    <h3 class="parrafo__encabezado--alt mt-4">{{publicacion.titulo}}</h3>
+    <h4 class="parrafo__texto font-italic publicacion__subtitulo m-0 mb-3">{{publicacion.subtitulo}}</h4>
+    <div class="row justify-content-center">
+      <div *ngFor="let autor of publicacion.autor" class="m-0 col-12 col-md-4 my-2">
+        <p class="parrafo__texto m-0">{{autor.nombre}} {{autor.apellidos}}</p>
+        <p *ngIf="autor.organismo" class="parrafo__texto font-italic m-0"> {{autor.organismo}}</p>
+        <p *ngIf="autor.contacto" class="parrafo__texto m-0"> {{autor.contacto}}</p>
+      </div>
+    </div>
+  </section>
+  <header *ngIf="publicacion.id">
+    <div class="row justify-content-center">
+      <div *ngIf="publicacion.abstract.es" class="col-12 col-md-6">
+        <h5 class="parrafo__encabezado--alt">Resumen</h5>
+        <p class="parrafo__texto entrada__parrafo">{{publicacion.abstract.es.text}}</p>
+      </div>
+      <div *ngIf="publicacion.abstract.es else abstractUnico" class="col-12 col-md-6">
+        <h5 class="parrafo__encabezado--alt">Abstract</h5>
+        <p class="parrafo__texto entrada__parrafo">{{publicacion.abstract.en.text}}</p>
+      </div>
+      <ng-template #abstractUnico>
+        <div class="col-12 col-md-8">
+          <h5 class="parrafo__encabezado--alt text-center">Abstract</h5>
+          <p class="parrafo__texto entrada__parrafo">{{publicacion.abstract.en.text}}</p>
+        </div>
+      </ng-template>
+    </div>
+  </header>
+  <ng-container *ngIf="publicacion.id">
+    <aside *ngIf="!publicacion.body" class="row m-auto justify-content-center">
+      <div class="col-12 col-md-6 parrafo__texto text-center m-3 p-1">Este artículo aún no está preparado para leerlo en
+        la web. Hasta entonces, puedes
+        consultarlo o descargarlo en la revista en la que apareció originalmente
+        <a class="publicacion__sinbody" href="{{publicacion.enlaceExterno}}" target="_blank">siguiendo este enlace</a></div>
+    </aside>
+  </ng-container>
+  <article (click)="activaEnlaces($event)" *ngIf="publicacion.body" [innerHTML]="publicacion.body | saneadorHtml">
+  </article>
+</section>
+

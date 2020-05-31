@@ -1,0 +1,35 @@
+<div (scrollPosition)="scrollHandler($event)" class="mt-3 text-center" scrollable>
+  <label for="blog__vistaminiatura--busqueda">
+    <input [(ngModel)]="filtroMiniaturas" class="blog__vistaminiatura--busqueda parrafo__texto w-25 mb-3" id="blog__vistaminiatura--busqueda"
+           name="blog__vistaminiatura--busqueda"
+           placeholder="Filtra entre el contenido más reciente" type="text">
+  </label>
+  <div class="blog__vistaminiatura--selector">
+    <label for="selectorCategorias">
+      <select [(ngModel)]="categoriaSelector" class="custom-select blog__vistaminiatura--selector parrafo__texto m-auto"
+              id="selectorCategorias"
+              name="selectorCategorias">
+        <option *ngFor="let categoria of categorias"
+                value="{{categoria.nombre}}">{{categoria.nombre}}</option>
+      </select>
+    </label>
+  </div>
+</div>
+<section *ngIf="miniaturasEntradas" class="row d-flex flex-row" id="blog__miniatura-vista">
+  <ng-container
+    *ngFor="let miniatura of miniaturasEntradas | filtroCategorias: categoriaSelector">
+    <ng-container *ngIf="filtraContenido(miniatura.titulo, miniatura.resumen, filtroMiniaturas)">
+      <article [@fadeIn] class="col-12 col-lg-6 my-3">
+        <blog-miniatura [entradaMiniatura]="miniatura">
+        </blog-miniatura>
+      </article>
+    </ng-container>
+  </ng-container>
+</section>
+<mat-card *ngIf="paginacion.done | async" [@fadeInUp] class="blog__vistaminiatura--fincontenido col-6 m-auto text-center">
+  <span class="parrafo__encabezado--alt">Has llegado al final del blog</span>
+</mat-card>
+<loading-spinner *ngIf="paginacion.loading | async" class="m-auto d-block"></loading-spinner>
+
+
+

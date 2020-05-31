@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/web-alejandro-lozano",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

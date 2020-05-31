@@ -1,0 +1,34 @@
+@mixin parrafo-contenido {
+  text-indent: 1rem !important;
+  text-align: justify;
+  padding: .5rem;
+}
+
+@mixin reset-lista{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+@mixin bullet-lista{
+  float: left;
+  margin-right: 5px;
+}
+
+
+@mixin estilo-enlace($color-enlace){
+  color: $color-enlace !important;
+  text-decoration-line: none !important;
+  cursor: pointer;
+}
+
+@mixin transicion-vertical($color-fuente, $desplazamiento-vertical, $duracion-transicion) {
+  transition: all $duracion-transicion;
+  &:hover {
+    color: $color-fuente;
+    transform: $desplazamiento-vertical;
+  }
+}
+
+

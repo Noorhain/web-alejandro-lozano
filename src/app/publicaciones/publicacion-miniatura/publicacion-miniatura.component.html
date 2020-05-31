@@ -1,0 +1,15 @@
+<a [routerLink]="['articulo', publicacion.contenido]">
+  <div [ngStyle]="{'background-image': !this.pantallaMovil ? this.estiloImagenMiniatura : ''}"
+       class="publicacion__miniatura--container">
+    <div [ngStyle]="{'background-image': this.pantallaMovil ? this.estiloImagenMiniatura : ''}"
+         class="publicacion__miniatura--datos bg-dark h-100 d-flex justify-content-end p-3">
+      <div class="publicacion__miniatura--datos--wrapper d-flex flex-column justify-content-center h-100">
+        <h3 class="parrafo__encabezado">{{publicacion.titulo}}</h3>
+        <p *ngIf="publicacion.subtitulo" class="lead">{{publicacion.subtitulo}}</p>
+        <p class="parrafo__encabezado font-weight-bold p-1">Publicado en <span
+          class="font-italic">{{publicacion.journal}}</span>
+          ({{publicacion.anioPublicacion}})</p>
+      </div>
+    </div>
+  </div>
+</a>

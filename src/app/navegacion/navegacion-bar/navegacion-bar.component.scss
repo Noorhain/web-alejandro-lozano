@@ -1,0 +1,57 @@
+@import 'abstracts/variables';
+
+.navegacion {
+  &__fondo {
+    background-color: $color-secundario;
+  }
+
+  &__logo {
+    &--imagen {
+      max-width: 50px;
+    }
+
+    &--texto {
+      display: inline-block;
+      font-size: 1.2rem;
+      color: $color-primario;
+      font-family: $encabezado-alternativo;
+    }
+  }
+
+  &__seccion {
+    &--activa,
+    &--activa:hover {
+      color: $color-primario;
+      text-shadow: 1px 1px 10px #FFF, 1px 1px 10px #CCC;
+    }
+
+    &--texto {
+      transition: all .2s ease-in-out; /* Susceptible de abstacción */
+      font-family: $encabezado-alternativo;
+      color: $color-primario !important;
+
+      &:hover:not(.navegacion__seccion--activa) {
+        color: $color-acento !important;
+      }
+    }
+  }
+
+  &__hamburguer {
+    &--icono {
+      transition: all $duracion-transicion-normal ease-in-out;
+      color: $color-primario;
+
+      &:hover {
+        color: $color-acento;
+      }
+    }
+  }
+}
+
+/*Menú de hamburguesa -- Sobreescritura del estilo de Bootstrap */
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+

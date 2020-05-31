@@ -1,0 +1,58 @@
+@import 'abstracts/variables';
+
+.publicacion__miniatura {
+  &--container {
+    margin: 0 auto;
+    width: 85%;
+    text-align: right;
+    color: $color-primario;
+    height: 600px;
+    background-size: cover;
+    background-position: left;
+
+    & > .publicacion__miniatura--datos .publicacion__miniatura--datos--wrapper * {
+      transition: all $duracion-transicion-rapida ease-in-out; /* Se puede abstraer */
+    }
+
+    &:hover > .publicacion__miniatura--datos .publicacion__miniatura--datos--wrapper * {
+      transform: $desplazamiento-arriba-intenso; /* Se puede abstraer */
+    }
+  }
+
+  &--datos {
+    clip-path: polygon(39% 0, 100% 0, 100% 100%, 57% 100%);
+    /*
+* El 'wrapper' es el contenedor del texto. Va dentro de otro contenedor que tiene el fondo de color plano y el recorte de clip path. El tamaño de este wrapper ha de ser del 50% y, además, alinearse a la derecha, de forma que el texto nunca sobrepase el recorte por la izquierda que hacemos con el clip path en el contenedor padre
+*/
+    &--wrapper {
+      width: 50%;
+    }
+  }
+}
+
+/*
+* Debemos ajustar el clip path para pantallas de dimensiones medianas de forma que el texto pueda respirar correctamente
+* En vistas muy estrechas (móviles, principalmente), el efecto de clip path nos quita mucho espacio para mostar el contenido de la publicación, por lo que lo eliminamos. En su lugar, Trasladamos la imagen de fondo desde  'publicacion__miniatura-container' hasta el contenedor que envuelve los datos ('publicacion__miniatura-datos-wrapper')
+*/
+
+@media screen and (max-width: 992px) {
+  .publicacion__miniatura {
+    &--container {
+      background-image: none;
+    }
+
+    &--datos {
+      clip-path: none;
+      background-size: cover;
+      background-position: center;
+
+      &--wrapper {
+        padding: .5rem;
+        width: 100%;
+        text-align: center;
+        background-image: $overlay-oscuro;
+      }
+    }
+  }
+}
+

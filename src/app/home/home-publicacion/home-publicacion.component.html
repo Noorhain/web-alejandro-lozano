@@ -1,0 +1,15 @@
+<a [routerLink]="['/publicaciones/articulo', publicacionSugerida.contenido]">
+  <div class="home__publicacion--container p-3">
+    <div
+      [ngStyle]="{backgroundImage: 'linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + this.publicacionSugerida.imagenMiniatura + ')'}"
+      class="home__publicacion--datos bg-dark h-100 d-flex justify-content-end p-3">
+      <div class="home__publicacion--datos--wrapper d-flex flex-column justify-content-center h-100">
+        <h3 class="parrafo__encabezado">{{publicacionSugerida.titulo}}</h3>
+        <p *ngIf="publicacionSugerida.subtitulo" class="lead">{{publicacionSugerida.subtitulo}}</p>
+        <p *ngIf="publicacionSugerida.journal" class="parrafo__encabezado font-weight-bold p-1">Publicado en <span
+          class="font-italic">{{publicacionSugerida.journal}}</span>
+          ({{publicacionSugerida.anioPublicacion}})</p>
+      </div>
+    </div>
+  </div>
+</a>

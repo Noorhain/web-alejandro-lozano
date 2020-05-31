@@ -1,0 +1,10 @@
+@import 'abstracts/variables';
+
+.about__tech {
+  background-color: $color-primario;
+  clip-path: polygon(67% 0, 100% 7%, 100% 100%, 0 100%, 0 0);
+
+  &--imagen {
+    max-width: 100px;
+  }
+}

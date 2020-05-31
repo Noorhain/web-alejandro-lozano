@@ -1,0 +1,11 @@
+<section class="container">
+  <div class="row p-2">
+    <div class="col-12 col-lg-8" [innerHTML]="textoSwitcher | saneadorHtml">
+    </div>
+    <div class="col-12 col-lg-3 d-flex align-content-center justify-content-center align-items-center">
+      <div class="lang__boton" (click)="toggleLenguaje()">
+        <p [ngClass]="!lenguajeEs? 'lang--activo' : 'lang--inactivo'" class="d-inline lang__bloque lang__es parrafo__encabezado--alt px-4 p-2">ES</p><p [ngClass]="lenguajeEs? 'lang--activo' : 'lang--inactivo'" class="d-inline lang__bloque lang__en parrafo__encabezado--alt px-4 p-2">EN</p>
+      </div>
+    </div>
+  </div>
+</section>

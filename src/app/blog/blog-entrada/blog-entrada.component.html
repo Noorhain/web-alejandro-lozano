@@ -1,0 +1,13 @@
+<aside id="blog__switcher" *ngIf="entradaBlog.bilingue">
+  <lang-switcher (langSwitcherEvent)="es = $event" [textoSwitcher]="entradaBlog.textoSwitcher"></lang-switcher>
+</aside>
+<article id="blog__texto--bilingue" (click)="activaEnlacesYScroll($event)"
+         *ngIf="entradaBlog.bilingue else monolingue"
+         [innerHTML]="!es? entradaBlog.body : entradaBlog.bodyEn | saneadorHtml" class="container entrada__container p-2 p-md-3">
+</article>
+<ng-template #monolingue>
+  <article id="blog__texto--es" (click)="activaEnlacesYScroll($event)" [innerHTML]="entradaBlog.body | saneadorHtml"
+           class="container entrada__container p-2 p-md-3">
+  </article>
+</ng-template>
+

@@ -1,0 +1,31 @@
+body, html, main {
+  min-height: 100vh;
+  background-color: $color-primario;
+  scroll-behavior: smooth;
+  overflow-X: hidden;
+}
+
+footer {
+  padding-top: 4rem;
+  background-color: $color-primario;
+}
+
+router-outlet ~ * {
+  display: block;
+  min-height: 100vh;
+  height: 100%;
+}
+
+/*
+* Sobreescritura de los estilos de enlaces.
+* Cada sección tiene que mostrarlos de una forma distinta
+*/
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit !important;
+  text-decoration-line: none !important;
+  cursor: pointer;
+}

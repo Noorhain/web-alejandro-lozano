@@ -1,0 +1,46 @@
+<mat-expansion-panel [expanded]="false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <span class="parrafo__encabezado--alt">Referencia del artículo</span>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div class="row">
+    <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+      <ng-container *ngIf="publicacionReferencias.autor.length > 1 else autorUnico">
+        <div *ngFor="let autor of publicacionReferencias.autor; let index = index;">
+          <p class="parrafo__encabezado--alt">
+            <span class="font-weight-bold">Autor {{index + 1}}</span>: {{autor.nombre}} {{autor.apellidos}}</p>
+        </div>
+      </ng-container>
+      <ng-template #autorUnico>
+        <p class="parrafo__encabezado"><span
+          class="font-weight-bold">Autor</span>: {{publicacionReferencias.autor[0]['nombre']}} {{publicacionReferencias.autor[0]['apellidos']}}
+        </p>
+      </ng-template>
+
+      <p class="parrafo__encabezado--alt">
+        <span class="font-weight-bold">Título</span>: {{publicacionReferencias.titulo}}
+        <span *ngIf="publicacionReferencias.subtitulo">. {{publicacionReferencias.subtitulo}}</span>
+      </p>
+      <p class="parrafo__encabezado--alt">
+        <span class="font-weight-bold">Revista</span>:
+        <span class="font-italic"> {{publicacionReferencias.journal.nombre}}</span>
+        <span *ngIf="publicacionReferencias.journal.editor"> ({{publicacionReferencias.journal.editor}})</span>
+      </p>
+      <p class="parrafo__encabezado--alt">
+        <span class="font-weight-bold">Volumen</span>: {{publicacionReferencias.journal.volumen}}
+        <span *ngIf="publicacionReferencias.journal.numero">({{publicacionReferencias.journal.numero}})</span>,
+        págs. {{publicacionReferencias.journal['pagina_inicio']}}
+        &mdash; {{publicacionReferencias.journal['pagina_fin']}} [extensión
+        de {{extension}} páginas]</p>
+      <a [href]="publicacionReferencias.enlaceExterno" class="publicacion__referencia--enlace parrafo__encabezado--alt"
+         target="_blank">Enlace a la
+        publicación original</a>
+    </div>
+    <div *ngIf="publicacionReferencias.imagenCover" class="col-12 col-md-6 text-center p-2">
+      <a [href]="publicacionReferencias.enlaceExterno" target="_blank">
+        <img [alt]="publicacionReferencias.titulo" [src]="publicacionReferencias.imagenCover" class="img-fluid publicacion__referencias--imagencover">
+      </a>
+    </div>
+  </div>
+</mat-expansion-panel>

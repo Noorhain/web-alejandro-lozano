@@ -1,0 +1,25 @@
+@import 'abstracts/variables';
+
+.blog__sidebar {
+  &--wrapper {
+    padding: .5rem;
+    background-color: $color-acento;
+    width: 200px;
+    min-height: 500px;
+    height: 700px;
+    max-height: 800px;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+  }
+
+}
+
+.sidebar__imagen {
+  border-radius: 50%;
+
+  &--enlace {
+    border-radius: 50%;
+  }
+}
+
+

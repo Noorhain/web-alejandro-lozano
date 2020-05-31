@@ -1,0 +1,21 @@
+@import 'abstracts/variables';
+
+.blog__miniatura {
+  &--container {
+    height: 430px;
+
+    .parrafo__encabezado {
+      transition: all $duracion-transicion-rapida ease-in-out;
+    }
+
+    &:hover .parrafo__encabezado {
+      transform: $desplazamiento-arriba-intenso;
+    }
+  }
+
+  &--imagen--wrapper {
+    width: 100%;
+    height: 70%;
+    background-size: cover;
+  }
+}

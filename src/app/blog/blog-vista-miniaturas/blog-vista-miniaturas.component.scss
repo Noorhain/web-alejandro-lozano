@@ -1,0 +1,36 @@
+@import 'abstracts/variables';
+
+.blog__vistaminiatura {
+  &--busqueda {
+    text-align: center;
+    min-width: 300px;
+    background: transparent;
+    border: none;
+    border-bottom: solid 2px $color-secundario;
+    font-size: 1.2rem;
+    color: $color-secundario;
+    line-height: 1.1;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+
+  &--selector {
+    display: inline-block;
+    margin: 1rem 3rem;
+    background-color: transparent;
+    outline: none !important;
+  }
+
+  &--fincontenido {
+    margin-top: 1rem !important;
+    color: $color-primario;
+    background-color: $color-secundario;
+  }
+}
+
+input.blog__vistaminiatura--busqueda {
+  height: 45px;
+}
+

@@ -1,0 +1,39 @@
+.entrada {
+  &__enlace {
+    &__enlace:hover,
+    &__enlace:active,
+    &__enlace:visited {
+      @include estilo-enlace($color-acento);
+    }
+  }
+
+  &__imagen {
+    &--unica {
+      max-height: 350px;
+    }
+  }
+
+  &__lecturas {
+    &--portada {
+      max-height: 400px;
+    }
+  }
+
+  &__notas {
+    &--referencia{
+
+    }
+    &--lista {
+      &-item {
+        font-family: $encabezado-principal;
+        text-align: justify;
+        margin: .3rem 5rem .3rem 0;
+        font-size: .9rem;
+      }
+    }
+  }
+
+  &__parrafo {
+    @include parrafo-contenido;
+  }
+}
