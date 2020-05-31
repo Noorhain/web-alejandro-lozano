@@ -2,7 +2,7 @@
 
 
 
-![wal-poster](/Users/alejandro/Documentos locales/Programacion/Proyectos/web-alejandro-lozano-no-API-keys/src/assets/img/wal-poster.png)
+![wal-poster](src/assets/img/wal-poster.png)
 
 
 
