@@ -1,6 +1,6 @@
 {
   "name": "web-alejandro-lozano",
-  "version": "0.0.0",
+  "version": "1.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,18 +12,18 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~9.0.4",
-    "@angular/cdk": "^9.2.0",
-    "@angular/common": "~9.0.4",
-    "@angular/compiler": "~9.0.4",
-    "@angular/core": "~9.0.4",
+    "@angular/animations": "~11.0.5",
+    "@angular/cdk": "^11.0.3",
+    "@angular/common": "~11.0.5",
+    "@angular/compiler": "~11.0.5",
+    "@angular/core": "~11.0.5",
     "@angular/fire": "^6.0.0-rc.1",
-    "@angular/forms": "~9.0.4",
-    "@angular/localize": "^9.1.0",
-    "@angular/material": "^9.2.0",
-    "@angular/platform-browser": "~9.0.4",
-    "@angular/platform-browser-dynamic": "~9.0.4",
-    "@angular/router": "~9.0.4",
+    "@angular/forms": "~11.0.5",
+    "@angular/localize": "^11.0.5",
+    "@angular/material": "^11.0.3",
+    "@angular/platform-browser": "~11.0.5",
+    "@angular/platform-browser-dynamic": "~11.0.5",
+    "@angular/router": "~11.0.5",
     "@fortawesome/angular-fontawesome": "^0.6.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
@@ -35,14 +35,14 @@
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "web-animations-js": "^2.3.2",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/architect": "^0.900.0-0 || ^0.900.0",
     "@angular-devkit/build-angular": "~0.900.4",
-    "@angular/cli": "~9.0.4",
-    "@angular/compiler-cli": "~9.0.4",
-    "@angular/language-service": "~9.0.4",
+    "@angular/cli": "^11.0.5",
+    "@angular/compiler-cli": "~11.0.5",
+    "@angular/language-service": "~11.0.5",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
@@ -62,6 +62,6 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.7.5"
+    "typescript": "~4.0.5"
   }
 }
